@@ -1,3 +1,37 @@
 /* css code for exercise 02-navbar */
 
 /* the color used is teal */
+
+nav{
+    width: 100%;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+
+a {
+    color:teal;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color:rgb(223, 233, 216);
+    text-decoration: underline;
+}
+
+a:focus{
+    background-color:rgb(223, 233, 216);
+}
+
+a:active{
+    background-color: crimson;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    display: inline;
+    padding: 1em;
+}
