@@ -5,7 +5,7 @@
     justify-content: space-evenly;
 }
 
-div{
+.flex-item{
     display: inline-block;
     width: 100px;
     height: 50px;
@@ -17,6 +17,7 @@ div{
     font-size: xx-large;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /* code for exercise 05-flex */
 .flex-container-columns{
     display: flex;
@@ -29,6 +30,42 @@ div{
 }
 
 /* code for exercise 06-grid */
+.grid-container{
+    display: grid;
+    gap: 1px;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    grid-template-rows: 75px 75px 75px 75px;
+}
+
+div.grid-item.grid-item5 {
+    grid-row: span 2;
+    grid-column: span 3;
+    order: -1;
+}
+
+div.grid-item.grid-item7 {
+    grid-row: span 1;
+    grid-column: span 4;
+    order: 0;
+}
+
+div.grid-item.grid-item9 {
+    grid-row: span 1;
+    grid-column: span 3;
+    order: 0;
+}
+
+.grid-item{
+    background-color: purple;
+    color: white;
+    font-size: xx-large;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.grid-item5{
+    
+}
 
 /* code for exercise 07-bootstrap-grid */
 
