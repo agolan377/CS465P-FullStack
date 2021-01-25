@@ -1,9 +1,10 @@
 /* code for exercise 04-flex */
-section{
+.flex-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
 div{
     display: inline-block;
     width: 100px;
@@ -13,10 +14,19 @@ div{
     background-color:purple;
     color:white;
     text-align: center;
-    font-size: x-large;
+    font-size: xx-large;
     font-family: Arial, Helvetica, sans-serif;
 }
 /* code for exercise 05-flex */
+.flex-container-columns{
+    display: flex;
+    height: 200px;
+    flex-flow:column-reverse wrap-reverse;
+}
+
+.flex-item1{
+    order: 10;
+}
 
 /* code for exercise 06-grid */
 
