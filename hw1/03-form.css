@@ -8,7 +8,7 @@ body {
 }
 
 form{
-  width: 25%;
+  width: 20%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1em;
@@ -49,6 +49,12 @@ button{
   color: white;
   padding: 5px;
   margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  form{
+    width: 90%;
+  }
 }
 
 #newsletterCheckbox{
