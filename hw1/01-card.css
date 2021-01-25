@@ -1,5 +1,31 @@
 /* css code for exercise 01-card */
 
+main{
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 a {
-  color: var(--teal);
+  color:teal;
+}
+
+p{
+  color: rgb(58, 57, 57);
+}
+
+h2{
+  color:rgb(66, 65, 65);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.catDiv1{
+  padding: 1em;
+  float: left;
+  border:groove;
+  margin: .1em;
+  width: 20%;
 }
