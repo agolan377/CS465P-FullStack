@@ -63,10 +63,33 @@ div.grid-item.grid-item9 {
     font-family:Arial, Helvetica, sans-serif;
 }
 
-.grid-item5{
-    
+/* code for exercise 07-bootstrap-grid */
+.darkBlue{
+    background-color: darkblue;
 }
 
-/* code for exercise 07-bootstrap-grid */
+.purple{
+    background-color: purple;
+}
 
+.pink{
+    background-color: rgb(219, 12, 140);
+}
+
+.teal{
+    background-color:teal;
+}
+
+.darkOrange{
+    background-color:orangered;
+}
+
+.green{
+    background-color: green;
+}
+
+.row > *{
+    border: 1px solid white;
+    height: 50px;
+}
 /* code for exercise 07-bootstrap-form */
