@@ -29,3 +29,21 @@ img {
   margin: .1em;
   width: 20%;
 }
+
+@media only screen and (max-width: 768px) {
+  a, p{
+    font-size: small;
+  }
+  h2{
+    font-size: medium;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  a, p{
+    font-size: x-small;
+  }
+  h2{
+    font-size: small;
+  }
+}
