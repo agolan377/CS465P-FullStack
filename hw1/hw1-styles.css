@@ -92,4 +92,28 @@ div.grid-item.grid-item9 {
     border: 1px solid white;
     height: 50px;
 }
-/* code for exercise 07-bootstrap-form */
+/* code for exercise 08-bootstrap-form */
+.contactForm{
+    background-color:gray;
+}
+
+form{
+    background-color: white;
+    width: 30%;
+}
+
+body{
+    background-color: gray;
+}
+
+@media only screen and (max-width: 768px) {
+    form{
+      width: 50%;
+    }
+  }
+
+  @media only screen and (max-width: 414px) {
+    form{
+      width: 90%;
+    }
+  }
