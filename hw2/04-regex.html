@@ -15,9 +15,11 @@
     <main class="bg-light border rounded w-50 mx-auto mt-5 p-3">
       <h2 class="mt-2 mb-4">Regular Expressions</h2>
       <div class="form-group">
-        <label for="input">Check for a valid email address: </label>
-        <input type="text" class="form-control" id="input" required />
+        <label for="input" >Check for a valid email address: </label>
+        <input type="text" class="form-control" id="input" required onfocusout="validateEmailFormat()"/>
       </div>
+      <div id="successDiv" style="color:green;"></div>
+      <div id="errorDiv" style="color:red;"></div>
     </main>
   </body>
 </html>
