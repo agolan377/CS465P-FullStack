@@ -5,8 +5,12 @@ function validateEmailFormat(){
     successDiv.innerText = "";
     errorDiv.innerText = "";
     const email = document.getElementById("input").value;
-    const regex = /[A-Za-z0-9A-Za-z0-9]{1,64}[\@][A-Za-z0-9A-Za-z0-9]{1,255}[\.][a-z]{3}/;
+
+    //64 chars is the real max allowed for part of email before @
+    //255 chars is the real max allowed for the part of email between @ and .
+    const regex = /[A-Za-z0-9A-Za-z0-9]{1,64}[\@][A-Za-z0-9A-Za-z0-9]{1,255}[\.][a-z]{3}/; 
     const validEmail = email.match(regex);
+
     if(validEmail === null || email !==  validEmail[0]){
         errorDiv.innerText = "Error: Please enter a valid email address.";
     }
