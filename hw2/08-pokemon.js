@@ -4,20 +4,20 @@ const fetchUrl = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1118";
 fetch(fetchUrl)
   .then((response) => response.json())
   .then(function (data) {
-    console.log(data);
     const resultsContainer = document.getElementById("results");
     for (var i = 0; i < data.count; i++) {
-      resultsContainer.innerHTML += data.results[i].name;
-
+      resultsContainer.innerHTML +=
+        "<span>" +
+        data.results[i].name.charAt(0).toUpperCase() +
+        data.results[i].name.slice(1) +
+        "</span>";
       if (i != data.count - 1) {
         resultsContainer.innerHTML += " - ";
       }
     }
-
-    var temp = "<h3>";
-    var temp2 = temp.concat(data.count);
-    var temp3 = temp2.concat(" total pokemons were fetched");
-    var formattedOutputString = temp3.concat("</h3>");
-    resultsContainer.innerHTML += "<br><br>";
-    resultsContainer.innerHTML += formattedOutputString;
+    resultsContainer.innerHTML +=
+      "<br><br><h3>" + data.count + " total pokemons were fetched</h3>";
+  })
+  .catch(function () {
+    console.log("error: request for pokemon data failed.");
   });
