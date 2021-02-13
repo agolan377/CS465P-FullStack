@@ -44,6 +44,46 @@ const server = http.createServer((req, res) => {
   }
 
   // Add your code below
+  if(req.url ==='/welcome'){
+    res.writeHead(200,{"Content-Type": "text/html"});
+    res.write("<h2>welcome</h2>");
+    res.end();
+  }
+
+  else if(req.url === '/redirect'){
+    res.writeHead(302, {'Location': '/redirected'});
+    res.end();
+  }
+
+  else if(req.url === '/cache'){
+    res.writeHead(200,{
+      'Cache-Control': 'max-age=86400',
+      'Content-Type': 'text/plain'});
+    res.write('this resource was cached');
+
+    res.end();
+  }
+
+  else if(req.url === '/cookie'){
+    console.log("setting cookie")
+    res.writeHead(200,{'Set-Cookie': 'hello=world'});
+    res.write("cookies...yummm");
+    res.end();
+  }
+
+  else if(req.url === '/check-cookies'){
+    console.log("checking for cookies...");
+    res.writeHead(200,{'Set-Cookie': 'hello=world'});
+    var cookies = res.headers['Set-Cookie'];
+    console.log(cookies);
+    res.end();
+  }
+
+  else{
+    res.writeHead(200,{"Content-Type": "text/plain"});
+    res.write("404: not found");
+    res.end();
+  }
 });
 
 server.listen(port, () => {
