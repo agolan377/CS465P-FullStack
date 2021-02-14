@@ -47,6 +47,47 @@ app.get("/populous", (req, res) => {
     });
 });
 
+app.get("/regions", (req, res) => {
+    rp("https://restcountries.eu/rest/v2/all?fields=region;name;")
+      .then((body) => {
+        var data = JSON.parse(body);
+  
+        var returnString = "";
+        var asiaCount = 0;
+        var africaCount = 0;
+        var americasCount = 0;
+        var europeCount = 0;
+        var oceaniaCount = 0;
+        for (var i = 0; i < data.length; i++) {
+            switch(data[i].region){
+                case 'Asia':
+                    asiaCount++;
+                    break;
+                case 'Africa':
+                    africaCount++;
+                    break;
+                case 'Americas':
+                    americasCount++;
+                    break;
+                case 'Europe':
+                    europeCount++;
+                    break;
+                case 'Oceania':
+                    oceaniaCount++;
+                    break;
+                default:
+                    console.log("Err: problem with region data in item " + i)
+            }
+        }
+        returnString += "Africa: " + africaCount + "<br/>" + "Americas: " + americasCount + "<br/>" + "Asia: " + asiaCount + "<br/>" + 
+        "Europe: " + europeCount + "<br/>" + "Oceania: " + oceaniaCount + "<br/>";
+        res.send(returnString);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
