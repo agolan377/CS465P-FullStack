@@ -5,6 +5,7 @@ const port = process.env.PORT || 5000;
 
 app.set("views", __dirname + "/views");
 app.set("view engine", "pug");
+app.use(express.static('/public'));
 
 // Add your code below
 const rp = require("request-promise");
@@ -17,7 +18,11 @@ app.get("/main", (req, res) => {
         2;
         returnString += data[i].name + ": " + data[i].capital + "<br/>";
       }
-      res.send(returnString);
+     
+      res.render("index", {
+        body: returnString
+      });
+        
     })
     .catch((err) => {
       console.log(err);
@@ -40,7 +45,10 @@ app.get("/populous", (req, res) => {
           returnString += data[i].name + ": " + data[i].population + "<br/>";
         }
       }
-      res.send(returnString);
+      returnString += "<";
+      res.render("index", {
+        body: returnString
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -79,9 +87,12 @@ app.get("/regions", (req, res) => {
                     console.log("Err: problem with region data in item " + i)
             }
         }
-        returnString += "Africa: " + africaCount + "<br/>" + "Americas: " + americasCount + "<br/>" + "Asia: " + asiaCount + "<br/>" + 
+        returnString += "Africa: " + africaCount + "<br/>" + "Americas: " + americasCount + "<br/>" + "Asia: " + asiaCount + "<br>" + 
         "Europe: " + europeCount + "<br/>" + "Oceania: " + oceaniaCount + "<br/>";
-        res.send(returnString);
+        
+        res.render("index", {
+            returnVal: returnString
+          });
       })
       .catch((err) => {
         console.log(err);
