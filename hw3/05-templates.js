@@ -16,12 +16,10 @@ app.get("/main", (req, res) => {
       let returnString = "";
       for (let i = 0; i < data.length; i++) {
         returnString +=
-          "<span>" +
           data[i].name +
           ": " +
           data[i].capital +
-          "</span>" +
-          "<br/>";
+          " | ";
       }
 
       res.render("index", {
@@ -46,7 +44,7 @@ app.get("/populous", (req, res) => {
       let returnString = "";
       for (let i = 0; i < data.length; i++) {
         if (data[i].population >= 20000000) {
-          returnString += data[i].name + ": " + data[i].population + "<br/>";
+          returnString += data[i].name + ": " + data[i].population + " | ";
         }
       }
       returnString += "<";
@@ -94,19 +92,19 @@ app.get("/regions", (req, res) => {
       returnString +=
         "Africa: " +
         africaCount +
-        "<br/>" +
+        " | " +
         "Americas: " +
         americasCount +
-        "<br/>" +
+        " | " +
         "Asia: " +
         asiaCount +
-        "<br>" +
+        " | " +
         "Europe: " +
         europeCount +
-        "<br/>" +
+        " | " +
         "Oceania: " +
         oceaniaCount +
-        "<br/>";
+        " | ";
 
       res.render("index", {
         returnVal: returnString,
