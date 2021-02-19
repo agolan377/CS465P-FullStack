@@ -6,7 +6,7 @@ const port = process.env.PORT || 5000;
 // Add your code below
 app.use(session({ secret: "secretsecretivegotasecret" }));
 global.globalArr = new Array();
-var sess;
+let sess;
 
 app.get("*", (req, res) => {
   // Add your code below
@@ -22,8 +22,7 @@ app.get("*", (req, res) => {
   }
   if (sess.resultString === undefined) {
     sess.resultString = req.originalUrl + "\n";
-  }
-  else{
+  } else {
     sess.resultString += req.originalUrl + "\n";
   }
   res.end();

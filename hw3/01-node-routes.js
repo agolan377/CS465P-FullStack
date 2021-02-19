@@ -66,8 +66,8 @@ const server = http.createServer((req, res) => {
     res.end();
   } else if (req.url === "/check-cookies") {
     console.log("checking for cookies...");
-    var header = res._header;
-    var cookie = "hello=world";
+    let header = res._header;
+    let cookie = "hello=world";
     if (header.includes(cookie)) {
       res.write("Yes");
     } else {

@@ -30,9 +30,9 @@ const server = http.createServer((req, res) => {
 
   // Add your code below
   else {
-    var query = req.url.split("?")[1];
-    var params = querystring.parse(query);
-    var resultString = "";
+    let query = req.url.split("?")[1];
+    let params = querystring.parse(query);
+    let resultString = "";
 
     for (const [key, value] of Object.entries(params)) {
       resultString += `<tr><td>${key}</td><td>${value}</td></tr>`;

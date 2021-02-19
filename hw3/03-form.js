@@ -8,9 +8,9 @@ app.use(express.urlencoded());
 
 app.post("/submit", (req, res) => {
   // Add your code below
-  var message = "";
-  var newsletter = "Newsletter: ";
-  
+  let message = "";
+  let newsletter = "Newsletter: ";
+
   if (req.body.newsletter !== undefined) {
     newsletter += "Yes, I would like to sign up for the newsletter.";
   } else {
